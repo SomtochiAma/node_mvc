@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <% include partials/head %>
+    </head>
+    <body>
+        <% include partials/menu %>
+        <h2>About</h2>
+        <ul>
+            <% appInfos.forEach(function(appInfo) { %>
+                <li><%= appInfo.title %> - <%= appInfo.desc %> </li>
+            <% }); %>
+        </ul>
+    </body>
+    <% include partials/script %>
+</html>
