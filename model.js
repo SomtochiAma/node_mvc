@@ -1,8 +1,21 @@
-const mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+//const mongoose = require('mongoose');
 
-mongooseDB = "mongodb://127.0.0.1/my_database";
-mongoose.connect(mongooseDB);
+/*mongooseDB = "mongodb://localhost:27017/test";
+mongoose.connect(mongooseDB); */
+
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+mongoose.connect('mongodb://localhost/test');
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function callback () {
+  console.log("h");
+});
+
+exports.test = function(req,res) {
+  res.render('test');
+};
+
 
 var userMessageSchema = new Schema({
     name: String,

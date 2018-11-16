@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <% include partials/head %>
+    </head>
+    <body>
+        <% include partials/menu %>
+        <h2>Messages</h2>
+        <ul>
+            <% items.forEach(function(item) { %>
+                <li><%= item.name %> - <%= item.message %> </li>
+            <% }); %>
+        </ul>
+    </body>
+<body>

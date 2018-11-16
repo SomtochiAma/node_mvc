@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const model = require("../model");
+const model1 = require("../model");
 const dotenv = require("dotenv/config");
 
 /* GET home page. */
@@ -20,10 +20,21 @@ router.post('/submit', (req, res, next) => {
     message: req.body.message,
   }
 
-  var newUser = new model(items);
+  var newUser = new model1(items);
   newUser.save();
   res.redirect('/users/');
 })
+
+router.get('/messages', (req, res, next) => {
+  model1.find()
+    .then(function(docs) {
+      res.render('messages', {page: 'Messages', menuId: 'Messages', items: docs})
+    })
+  // res.send("Maya!");
+})
+
+ 
+
 console.log(process.env.SECRET_MESSAGE);
 
 module.exports = router;
