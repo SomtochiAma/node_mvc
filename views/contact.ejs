@@ -6,15 +6,17 @@
     <body>
         <% include partials/menu %>
         <div class="contact-card">
-            <h3>We will love to hear from you</h3>
-            <hr>
-            <p>Name</p>
-            <input type="text" >
-            <p>Email</p>
-            <input type="text">
-            <p>Message</p>
-            <textarea ></textarea><br>
-            <button class="btn" id="contact-btn">Send an email</button>
+            <form action="/submit" method="post">
+                <h3>We will love to hear from you</h3>
+                <hr>
+                <p>Name</p>
+                <input type="text" name="name">
+                <p>Email</p>
+                <input type="text" name="email">
+                <p>Message</p>
+                <textarea name="message"></textarea><br>
+                <input type="submit" class="btn" id="contact-btn" value="Send an email">
+            </form>
         </div>
     </body>
     <% include partials/script %>
