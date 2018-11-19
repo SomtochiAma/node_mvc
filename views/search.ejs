@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <% include partials/head %>
+    </head>
+    <body>
+        <% include partials/menu %>
+        <h2>Showing messages entered by <%= searchText %></h2>
+        <ul>
+            <% if (searchItems.length !== 0) { %>
+                <% for (var i = 0; i < searchItems.length; i++) { %>
+                <li class="box-message"><%= searchItems[i].message %></li>  
+                <% } %>
+            <% } else { %>   
+                <p> <%= searchText %> hasn't entered any message</p>
+            <% } %>
+        </ul>
+    </body>
+<body>

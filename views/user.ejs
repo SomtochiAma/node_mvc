@@ -4,9 +4,16 @@
         <% include partials/head %>
     </head>
     <body>
+    <div class="container1">
         <% include partials/menu %>
-        <h3>Your Message was sent sucessfully </h3>
+        <h2>Your Message was sent sucessfully </h2>
         <a href="/messages">View Older Messages</a>
+        <h3>Or search for a person's message by name:</h3>
+        <form action="/search" method="POST">
+            <input type="text" name="searchText"> 
+            <input type="submit" value="Go!" class="btn" id="go-btn">
+        </form>
+    </div>
     </body>
     <% include partials/script %>
 </html>

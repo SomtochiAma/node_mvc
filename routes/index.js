@@ -33,6 +33,15 @@ router.get('/messages', (req, res, next) => {
   // res.send("Maya!");
 })
 
+router.post('/search', (req,res, nex) => {
+  let searchText = req.body.searchText;
+  model1.find({name: searchText}, function(err, user) {
+    if(err) throw err;
+    console.log(user);
+    res.render('search', { page: 'Search', menuId: 'search', searchItems: user, searchText: searchText} )
+  });
+})
+
  
 
 console.log(process.env.SECRET_MESSAGE);
